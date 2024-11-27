@@ -1,0 +1,28 @@
+
+.sidebarStyle {
+    width: 150px;
+    height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+    position: fixed;
+    margin-top: 70px;
+    top: 70;
+    left: 0;
+    z-index: 1000;
+}
+
+.buttonStyle {
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.dropdownStyle {
+    padding-left: 20px;
+    list-style: none;
+    margin-top: 10px;
+}
