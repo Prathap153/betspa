@@ -16,9 +16,9 @@ export const getAllCategory = createAsyncThunk(
         'https://localhost:7147/api/Category/getAll',
         getHeaders()
       );
-      console.log("Response at getAllCategory",response);
-      console.log("response.data at getAllCategory",response.data);
-      console.log("response.data.data at getAllCategory",response.data.data);
+      // console.log("Response at getAllCategory",response);
+      // console.log("response.data at getAllCategory",response.data);
+      // console.log("response.data.data at getAllCategory",response.data.data);
       return response.data.data;
     }
     catch(error)
@@ -61,4 +61,4 @@ export const updateCategory = createAsyncThunk(
           );
           return response.data.data;
     }
-)
+);

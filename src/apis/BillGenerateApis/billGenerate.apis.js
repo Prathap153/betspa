@@ -26,7 +26,7 @@ export const DeleteBill = createAsyncThunk(
             `https://localhost:7147/api/BillGenerated/delete/${id}`,
             getHeaders()
           );
-          return response.data;
+          return response.data.data;
     }
 );
 
@@ -41,8 +41,19 @@ export const addBill = createAsyncThunk(
     }
 );
 
+export const getByIdBill = createAsyncThunk(
+      'bill/getById',
+      async(id)=> {
+        const response = await axios.get(
+          `https://localhost:7147/api/BillGenerated/getById/${id}`,
+          getHeaders()
+        );
+        return response.data.data;
+      }
+)
+
 export const updateGeneratedBill = createAsyncThunk(
-     'update/add',
+     'bill/update',
      async({id,updateBill})=>{
         const response = await axios.put(
             `https://localhost:7147/api/BillGenerated/update/${id}`,updateBill,
@@ -53,3 +64,4 @@ export const updateGeneratedBill = createAsyncThunk(
 );
 
 
+ 

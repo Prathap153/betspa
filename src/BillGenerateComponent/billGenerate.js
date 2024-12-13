@@ -51,10 +51,11 @@ const BillGenerateList = () => {
     };
 
     const handleDelete = async (id) => {
+        console.log("Attempting to delete id:", id);
         try {
-           var res= await dispatch(DeleteBill(id));
+           var res= dispatch(DeleteBill(id));
+           dispatch(getAllBillGenarated());
            console.log("delete bill",res);
-            dispatch(getAllBillGenarated());
         } catch (error) {
             console.log("error at deleting", error);
         }
@@ -69,7 +70,7 @@ const BillGenerateList = () => {
             field: "isActive",
             headerName: "Active",
             flex: 1,
-            renderCell: (params) =>
+            renderCell: (params) => 
                 params.value ? (
                     <IconButton color="success">
                         <CheckCircleIcon />
@@ -81,19 +82,18 @@ const BillGenerateList = () => {
                 ),
         },
         {
-            
             field: "actions",
             headerName: "Actions",
             flex: 1,
             renderCell: (params) => (
-                <div>
-                    <IconButton onClick={()=>handleEdit(params.rows.id)}>
-                        <EditIcon fontSize="small" />
-                    </IconButton>
-                    <IconButton onClick={() => handleDelete(params.rows.id)}>
-                        <DeleteIcon fontSize="small" />
-                    </IconButton>
-                </div>
+                    <div>
+                        <IconButton onClick={() => handleEdit(params.row.id)}>
+                            <EditIcon fontSize="small" />
+                        </IconButton>
+                        <IconButton onClick={() => handleDelete(params.row.id)}>
+                            <DeleteIcon fontSize="small" />
+                        </IconButton>
+                    </div>
             ),
         },
     ];
@@ -104,7 +104,7 @@ const BillGenerateList = () => {
         categoryName: bg.categoryName,
         amount_Generated: bg.amount_Generated,
         due_Date: bg.due_Date,
-        isActive: bg.isActive,
+        isActive: bg.isActive
     }));
 
     return (

@@ -5,6 +5,7 @@ import CategoryList from './CategoryComponent/categoryList';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import BillGenerateList from './BillGenerateComponent/billGenerate';
+import ExpensesList from './ExpensesComponent/expensesList';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/category" element={<CategoryList />} />
             <Route path="/billgenerate" element={<BillGenerateList />} />
+            <Route path="/expenses" element={<ExpensesList />}/>
           </Routes>
         </div>
       </div>

@@ -31,6 +31,9 @@ const Navbar = () => {
                     <Button color="inherit" component={Link} to="/billgenerate">
                         Bills
                     </Button>
+                    <Button color="inherit" component={Link} to="/expenses">
+                        Expenses
+                    </Button>
                     <Button color="inherit" component={Link} to="/" onClick={handleLogout}>
                         Logout
                     </Button>
